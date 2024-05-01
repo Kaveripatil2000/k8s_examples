@@ -1,0 +1,38 @@
+// cluster ip networking
+apiVersion: v1
+kind: Service
+metadata:
+  name: flipkartsignup
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    name: deployment
+  type: ClusterIP
+
+//nodeport
+apiVersion: v1
+kind: Service
+metadata:
+  name: flipkartsignup
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    name: deployment
+  type: NodePort
+
+// loadbalancer
+  apiVersion: v1
+kind: Service
+metadata:
+  name: flipkartsignup
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    name: deployment
+  type: LoadBalancer
