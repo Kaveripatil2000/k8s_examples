@@ -1,0 +1,21 @@
+// Deployment object comm for all
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flipkart
+spec:
+   replicas: 1
+   selector:
+    matchLabels:
+     name: deployment
+   template:
+      metadata:
+        name: sou
+        labels:
+          name: deployment
+      spec:
+       containers:
+         - name: signup
+           image: httpd
+           ports:
+           - containerPort: 80
