@@ -1,0 +1,20 @@
+// 1 pod with container with replication controller
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: flipkart
+spec:
+  replicas: 2
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: kaveri
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: signup
+        image: nginx
+        ports:
+        - containerPort: 80
