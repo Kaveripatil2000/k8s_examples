@@ -1,0 +1,24 @@
+//communication b/w pod to pod
+ -->vi pod.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    -   containerPort: 80
+
+-->vi pod2.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+spec:
+  containers:
+    - name: httpd
+      image: httpd
+      ports:
+      - containerPort: 80
