@@ -1,0 +1,11 @@
+// 1 pod with 1 container running with nginx webserver and port of 80
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flipkart
+spec:
+  containers:
+    - name: signup
+      image: nginx
+      ports:
+      - containerPort: 80
